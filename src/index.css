@@ -1,3 +1,4 @@
+/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -5,11 +6,13 @@
   font-family: sans-serif;
 }
 
+/* Container */
 .container {
   width: 100vw;
   min-height: 100vh;
-  background: rgba(79, 115, 208, 0.532);
-  transition: 0.5;
+  background: rgba(79, 115, 208, 0.1); /* lighter background */
+  transition: background-color 0.5s, color 0.5s;
+  padding: 1rem;
 }
 
 .container.dark {
