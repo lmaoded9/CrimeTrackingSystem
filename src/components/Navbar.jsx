@@ -1,16 +1,15 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-// import { useAuth } from '../context/AuthContext';
+import { Link, useLocation, useNavigate} from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 import './Navbar.css';
-import logo_light from '../assets/logo-black.png';
-import logo_dark from '../assets/logo-white.png';
 import toggle_light from '../assets/night.png';
 import toggle_dark from '../assets/day.png';
 
 const Navbar = ({ theme, setTheme }) => {
-  // const { user, logout } = useAuth();
+  const { user, logout } = useAuth();
   const location = useLocation();
+  const navigate = useNavigate(); /* for logout */
 
   const isActive = (path) => location.pathname === path;
 
@@ -23,7 +22,12 @@ const Navbar = ({ theme, setTheme }) => {
   ];
 
   const toggleMode = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
+    setTheme(theme === 'dark' ? 'light' : 'dark');
+  };
+
+   const handleLogout = () => {
+    logout();
+    navigate('/login');
   };
 
   return (
@@ -47,15 +51,15 @@ const Navbar = ({ theme, setTheme }) => {
           ))}
         </ul>
 
-        {/* <div className="navbar-auth">
+        <div className="navbar-auth">
           {user ? (
             <>
               <div className="navbar-user-info">
                 <span>👤 {user.name}</span>
-                <span className="navbar-user-role">{user.role}</span>
+                {/* <span className="navbar-user-role">{user.role}</span> */}
               </div>
               <button onClick={logout} className="navbar-logout">
-                🚪 Logout
+                Logout
               </button>
             </>
           ) : (
@@ -68,7 +72,7 @@ const Navbar = ({ theme, setTheme }) => {
               </Link>
             </>
           )}
-        </div> */}
+        </div>
 
         <img
           onClick={toggleMode}

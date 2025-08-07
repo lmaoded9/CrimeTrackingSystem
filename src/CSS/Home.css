@@ -11,6 +11,10 @@
   background-color: #f4f7f9;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
+.page-wrapper.light {
+  background: #fff;
+  color: #222;
+}
 
 .page-wrapper.dark {
   color: #e0e0e0;
@@ -30,14 +34,18 @@
   margin-bottom: 0.5rem;
   letter-spacing: -0.05em;
   color: inherit;
-  padding: 0 1rem; /* Added padding to prevent text from touching the screen edges on small devices */
+  padding: 0 1rem; 
+  display: flex;
+  justify-content: center;
 }
 
 .section-subtitle {
   font-size: 1.2rem;
   color: #6b7280;
   margin-bottom: 2rem;
-  padding: 0 1rem; /* Added padding to prevent text from touching the screen edges on small devices */
+  padding: 0 1rem; 
+  display: flex;
+  justify-content: center;
 }
 
 .page-wrapper.dark .section-subtitle {
@@ -82,7 +90,12 @@
 }
 
 .btn-primary {
-  background-color: #0056d2;
+  background-color: #3c70b9;
+  color: #fff;
+}
+
+.page-wrapper.dark .btn-primary{
+  background-color: #222838;  
   color: #fff;
 }
 
@@ -94,13 +107,19 @@
 
 /* Hero Section */
 .hero {
-  background-color: #0056d2;
-  color: #fff;
+  background-color: #5b92e6;
+  color: #fffcfc;
   padding: 8rem 0; /* Removed side padding here */
   text-align: center;
   background-image: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><g fill="none" stroke="%23ffffff" stroke-width="0.2" opacity="0.15"><circle cx="50" cy="50" r="45"/><circle cx="50" cy="50" r="40"/><circle cx="50" cy="50" r="35"/><circle cx="50" cy="50" r="30"/><circle cx="50" cy="50" r="25"/><circle cx="50" cy="50" r="20"/><circle cx="50" cy="50" r="15"/><circle cx="50" cy="50" r="10"/></g></svg>');
   background-size: 200px 200px;
   animation: hero-bg-animation 20s infinite linear;
+  
+}
+
+.page-wrapper.dark .hero {
+  background-color: #222838;/* A darker shade for dark mode */
+  color: #ffffff; /* Light text color for dark mode */
 }
 
 @keyframes hero-bg-animation {
@@ -122,7 +141,7 @@
 
 .hero-subtitle {
   font-size: 1.25rem;
-  font-weight: 300;
+  font-weight: 500;
   max-width: 800px;
   margin: 0 auto 2.5rem;
   line-height: 1.6;
@@ -176,7 +195,8 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  padding: 0 1rem; /* Added padding to prevent cards from touching the screen edges */
+  padding: 0 1rem; 
+  margin-top: -120px;
 }
 
 .stat-card {
@@ -184,20 +204,22 @@
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 5px 10px #5b92e6;
+  
 }
 
 .page-wrapper.dark .stat-card {
-  background-color: #2d3748;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #121826;
+  box-shadow: 0 4px 10px rgba(17, 16, 16, 0.427);
 }
 
 .stat-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 10px rgba(8, 8, 8, 0.922); 
 }
 
 .page-wrapper.dark .stat-card:hover {
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(222, 217, 217, 0.3);
 }
 
 .stat-card .card-body {
@@ -232,6 +254,7 @@
 /* Features Section */
 .features-section {
   padding: 4rem 0;
+  margin-top: -50px;
 }
 
 .features-grid {
@@ -247,11 +270,13 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   text-align: center;
   padding: 2.5rem 1.5rem;
+  margin-top: 30px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 5px 10px #5b92e6;
 }
 
 .page-wrapper.dark .feature-card {
-  background-color: #2d3748;
+  background-color:#121826;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
@@ -340,7 +365,7 @@
 
 /* CTA Section */
 .cta {
-  background-color: #0056d2;
+  background-color: #5b92e6;
   color: #fff;
   padding: 6rem 0; /* Removed side padding here */
   text-align: center;
@@ -352,7 +377,7 @@
 }
 
 .page-wrapper.dark .cta {
-  background-color: #0041a8;
+  background-color: #1a202c;
 }
 
 .cta-title {
@@ -379,7 +404,7 @@
   color: #fff;
 }
 .page-wrapper.dark .text-green-600 {
-  color: #48bb78; /* A brighter green for dark mode */
+  color: #e3eae6; /* A brighter green for dark mode */
 }
 .page-wrapper.dark .text-blue-600 {
   color: #63b3ed; /* A brighter blue for dark mode */

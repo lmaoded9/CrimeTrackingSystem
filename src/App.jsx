@@ -10,14 +10,14 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 
 const App = () => {
-  const [theme, setTheme] = useState('light');
+  const [theme, setTheme] = useState('dark');
 
   return (
     <div className={`container ${theme}`}>
       <Navbar theme={theme} setTheme={setTheme} />
 
       <Routes>
-        <Route path="/" element={<Home/>}/>
+        <Route path="/" element={<Home theme={theme}/>}/>
         <Route path="/map" element={<CrimeMap/>}/>
         <Route path="/cases" element={<Cases/>}/>
         <Route path="/statistics" element={<Statistics/>}/>

@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 // import { mockStats } from '../utils/mockData';
 
 import '../CSS/Home.css';
 
 const Home = ({ theme }) => {
-  // const { user } = useAuth();
+  const { user } = useAuth();
 
   const mockStats = {
     totalCases: 1500,
@@ -175,14 +175,11 @@ const Home = ({ theme }) => {
           <p className="cta-subtitle">
             Join thousands of citizens who use our platform to stay updated about safety in their communities.
           </p>
-          {/* {!user && (
+          {!user && (
             <Link to="/register" className="btn btn-primary btn-lg">
               Get Started Today
             </Link>
-          )} */}
-          <Link to="/register" className="btn btn-primary btn-lg">
-            Get Started Today
-          </Link>
+          )}  
         </div>
       </section>
     </div>

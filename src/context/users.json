@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "Admin User",
+      "email": "admin@crime.gov.in",
+      "password": "admin123",
+      "role": "admin",
+      "location": { "city": "New Delhi", "state": "Delhi" }
+    },
+    {
+      "id": "2",
+      "name": "Police Officer",
+      "email": "police@patiala.gov.in",
+      "password": "police123",
+      "role": "police",
+      "location": { "city": "Patiala", "state": "Punjab" }
+    }
+  ],
+  "citizens": []
+}
