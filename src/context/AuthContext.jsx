@@ -14,8 +14,15 @@ export const useAuth = () => {
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [users, setUsers] = useState(usersData.users);
-  const [citizens, setCitizens] = useState(usersData.citizens);
+  const [users, setUsers] = useState(() => {
+    const storedUsers = localStorage.getItem('users');
+    return storedUsers ? JSON.parse(storedUsers) : usersData.users;
+  });
+  
+  const [citizens, setCitizens] = useState(() => {
+    const storedCitizens = localStorage.getItem('citizens');
+    return storedCitizens ? JSON.parse(storedCitizens) : usersData.citizens;
+  });
 
   useEffect(() => {
     const storedUser = localStorage.getItem('user');
@@ -60,6 +67,9 @@ export const AuthProvider = ({ children }) => {
     const newCitizen = { id: Date.now().toString(), ...userData };
     const updatedCitizens = [...citizens, newCitizen];
     setCitizens(updatedCitizens);
+    
+    // Store updated citizens list in localStorage
+    localStorage.setItem('citizens', JSON.stringify(updatedCitizens));
 
     const { password, ...userToStore } = newCitizen;
     setUser(userToStore);
